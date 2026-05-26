@@ -8,7 +8,7 @@ START_Y = 0
 
 START_ENERGY = 30
 
-# ===== UKRYTA BAZA (losowa w każdej grze) =====
+
 BASE_X = random.randint(WORLD_MIN, WORLD_MAX)
 BASE_Y = random.randint(WORLD_MIN, WORLD_MAX)
 
@@ -17,7 +17,7 @@ def clamp(v, min_v, max_v):
     return max(min_v, min(max_v, v))
 
 
-# ===== ZDARZENIA LOSOWE =====
+
 def random_event():
     roll = random.randint(1, 100)
 
@@ -30,7 +30,7 @@ def random_event():
     return None
 
 
-# ===== ZDARZENIA ŚWIATA =====
+
 def world_event(x, y):
     events = {
         (3, 3): ("RUINY", "block"),
@@ -41,7 +41,7 @@ def world_event(x, y):
     return events.get((x, y))
 
 
-# ===== GRA =====
+
 def run_game():
     name = input("Nazwa łazika: ")
 
@@ -83,13 +83,13 @@ def run_game():
         # koszt ruchu
         energy -= 1
 
-        # ===== BAZA (UKRYTA) =====
+        
         if (x, y) == (BASE_X, BASE_Y):
             result = "SUKCES"
             reason = "Odnaleziono bazę"
             break
 
-        # ===== ŚWIAT =====
+       
         event = world_event(x, y)
         if event:
             if len(event) == 3:
@@ -105,7 +105,7 @@ def run_game():
             elif type_ev == "block":
                 x, y = prev_x, prev_y
 
-        # ===== LOSOWE =====
+        
         rand = random_event()
         if rand:
             name_ev, value, desc = rand
@@ -118,13 +118,13 @@ def run_game():
         history.append((step, x, y, energy))
         step += 1
 
-        # ===== KONIEC =====
+        
         if energy <= 0:
             result = "PORAŻKA"
             reason = "Brak paliwa"
             break
 
-    # ===== RAPORT =====
+    
     print("\n=== RAPORT KOŃCOWY ===")
     print(f"Łazik: {name}")
     print(f"Końcowa pozycja: ({x},{y})")
