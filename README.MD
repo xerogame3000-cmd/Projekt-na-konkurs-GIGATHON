@@ -1,18 +1,18 @@
 Symulator ekspedycji łazika 
 
-Opis
+Opis:
 Program symuluje ruch łazika w. Gracz porusza się po mapie i odkrywa losowe zdarzenia.
 
-Sterowanie
+Sterowanie:
 - w → góra  
 - s → dół  
 - a → lewo  
 - d → prawo  
 
-Uruchomienie
+Uruchomienie:
 Plik main.py
 
-Zasady
+Zasady:
 - każdy ruch zużywa paliwo
 - świat zawiera losowe zdarzenia
 - gra kończy się gdy skończy się paliwo
