@@ -10,7 +10,7 @@ Sterowanie:
 - d → prawo  
 
 Uruchomienie:
-Plik main.py
+Plik main.py (musisz zainstalować)
 
 Zasady:
 - każdy ruch zużywa paliwo
